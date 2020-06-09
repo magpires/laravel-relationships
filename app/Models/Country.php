@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-// Comando para criar model dentro da pasta Models e a migration da model: php artisan make:model Models\\Nomedamodel -m
+// Comando para criar model dentro da pasta Models e a migration da model: php artisan make:model Models\Nomedamodel -m
 
 class Country extends Model
 {
@@ -16,5 +16,10 @@ class Country extends Model
     public function location() {
         // É retornado apenas uma localização.
         return $this->hasOne(Location::class);
+    }
+
+    // Esta function retornará todos os estados de um país
+    public function states() {
+        return $this->hasMany(State::class);
     }
 }
