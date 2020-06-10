@@ -52,6 +52,7 @@ class OneToManyController extends Controller
         echo "<b>{$state->name}</b>";
 
         $country = $state->country;
+        dd($state);
         echo "<b>País: {$country->name}</b>";
     }
 }

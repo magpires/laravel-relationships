@@ -15,6 +15,9 @@ class OneToOneController extends Controller
         // Para exibir seus dados com relationships, basta fazer exatamente igual ao que foi feito em $country
         $countryComNome = Country::where('name', 'Brasil')->get()->first();
 
+        // Recupera um país já com todos os seus estados
+        // $countryComNome = Country::where('name', 'Brasil')->with('states')->get()->first();
+
         echo $country->name;
 
         // Com o auxílio do metodo criado na model, capturamos a localização do país
