@@ -8,6 +8,7 @@ class Location extends Model
 {
     protected $fillable = ['country_id' ,'latitude', 'longitude'];
     
+    // Retorna o país ao qual a localização pertence.
     public function country() {
         return $this->belongsTo(Country::class);
 
