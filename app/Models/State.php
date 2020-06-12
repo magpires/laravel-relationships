@@ -11,4 +11,9 @@ class State extends Model
     public function country() {
         return $this->belongsTo(Country::class);
     }
+
+    // Retorna todas as cidades de um estado.
+    public function cities() {
+        return $this->hasMany(City::class);
+    }
 }
