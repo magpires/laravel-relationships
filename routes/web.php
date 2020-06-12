@@ -22,6 +22,7 @@ Route::get('one-to-many', 'OneToManyController@oneToMany')->name('one-to-one');
 Route::get('mane-to-one', 'OneToManyController@manyToOne')->name('mane-to-one');
 Route::get('one-to-many-two', 'OneToManyController@oneToManyTwo')->name('one-to-many-two');
 Route::get('one-to-many-insert', 'OneToManyController@oneToManyInsert')->name('one-to-many-insert');
+Route::get('one-to-many-insert-two', 'OneToManyController@oneToManyInsertTwo')->name('one-to-many-insert-two');
 
 Route::get('/', function () {
     return view('welcome');

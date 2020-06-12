@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class State extends Model
 {
     
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'initials', 'country_id'];
 
     // Retorna o país ao qual um estado pertence
     public function country() {

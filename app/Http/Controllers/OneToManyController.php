@@ -98,16 +98,32 @@ class OneToManyController extends Controller
         }
     }
 
+    // Cadastrando um estado ao país
+
     public function oneToManyInsert() {
         $dataForm = [
-            'name' => 'Ceara',
-            'initials' => 'CE',
+            'name' => 'Bahia',
+            'initials' => 'BA',
         ];
         
         $country = Country::find(1);
 
         $insertState = $country->states()->create($dataForm);
 
-        var_dump($insertState);
+        dd($insertState);
+    }
+
+    // Outra forma de cadastrar um estado a um país.
+
+    public function oneToManyInsertTwo() {
+        $dataForm = [
+            'name' => 'Bahia',
+            'initials' => 'BA',
+            'country_id' => '1'
+        ];
+
+        $insertState = State::create($dataForm);
+
+        dd($insertState);
     }
 }
