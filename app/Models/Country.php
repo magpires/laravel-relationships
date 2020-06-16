@@ -24,4 +24,11 @@ class Country extends Model
     public function states() {
         return $this->hasMany(State::class);
     }
+
+    // Retorna todas as cidades de um país
+    public function cities() {
+        // Aqui nós fazemos um return um pouco diferente dos demais, pois além de retornar a model dos itens que queremos,
+        // nesse caso, City, nós também retornamos a model intermediária que está entre City e Country. Nesse caso, State.
+        return $this->hasManyThrough(City::class, State::class);
+    }
 }
