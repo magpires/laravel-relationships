@@ -13,6 +13,8 @@ class CreateCompanyCityTable extends Migration
      */
     public function up()
     {
+        // O Laravel espera que tabelas pivor recebam nomes em ordem alfabética. Se isso não acontecer, um erro será gerado
+        // A tabela pivor abaixo deveria se chamar "city_company"
         Schema::create('company_city_', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('city_id')->unsigned();
