@@ -12,7 +12,17 @@ use PHPUnit\Framework\Constraint\Count;
 class PolymorphicController extends Controller
 {
     public function polymorphic() {
+        // Aqui nós exibimos os comentários de uma cidade. A mesma lógica pode ser utilizada para
+        // exibir os comentários de países e estados.
+        $city = City::where('name', 'GUARULHOS')->get()->first();
 
+        echo"<b>{$city->name}</b><br>";
+
+        $comments = $city->comments()->get();
+
+        foreach ($comments as $comment) {
+            echo "<br>{$comment->description}";
+        }
     }
 
     public function polymorphicInsert() {
