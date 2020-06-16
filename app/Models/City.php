@@ -13,4 +13,11 @@ class City extends Model
         // que estamos usando, pois ele espera por uma nomeclatura padrão não implementada por nós.
         return $this->belongsToMany(Company::class, 'company_city_');
     }
+
+    // O método a seguir irá retornar todos os comentários de uma cidade.
+    public function comments() {
+        // Devemos informar ao método morphManny a classe Comment e o método que faz o relacionamento entre os comentários e a cidade.
+        // Nesse caso, o método é o Commentable.
+        return $this->morphMany(Comment::class, 'commentable');
+    }
 }

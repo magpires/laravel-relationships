@@ -31,4 +31,11 @@ class Country extends Model
         // nesse caso, City, nós também retornamos a model intermediária que está entre City e Country. Nesse caso, State.
         return $this->hasManyThrough(City::class, State::class);
     }
+
+    // O método a seguir irá retornar todos os comentários de um país.
+    public function comments() {
+        // Devemos informar ao método morphManny a classe Comment e o método que faz o relacionamento entre os comentários e o país.
+        // Nesse caso, o método é o Commentable.
+        return $this->morphMany(Comment::class, 'commentable');
+    }
 }
