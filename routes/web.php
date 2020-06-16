@@ -42,6 +42,14 @@ Route::get('many-to-many', 'ManyToManyController@manyToMany')->name('many-to-man
 Route::get('many-to-many-inverse', 'ManyToManyController@manyToManyInverse')->name('many-to-many-inverse');
 Route::get('many-to-many-insert', 'ManyToManyController@manyToManyInsert')->name('many-to-many-insert');
 
+/*
+|
+| Relation Polymorphic
+|
+*/
+Route::get('polymorphics', 'PolymorphicController@polymorphic')->name('polymorphics');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
