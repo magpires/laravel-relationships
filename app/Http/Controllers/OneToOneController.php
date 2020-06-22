@@ -56,4 +56,33 @@ class OneToOneController extends Controller
         $dataForm['country_id'] = $country->id;
         $location = Location::create($dataForm);
     }
+
+    public function IndexInsert() {
+
+        return view('index-insert');
+    }
+    
+    public function insertViaAndroid(Request $data) {
+
+        // dd($data);
+
+        $country = Country::create([
+            'name' => $data['name'],
+        ]);
+
+        // Após cadastrar o país, vamos armazenar sua localização
+
+        // Adicionamos o country_id do país que foi cadastrado ao $data para ligarmos a localização a ele
+        $data['country_id'] = $country->id;
+        
+        $location = Location::create([
+            'latitude' => $data['latitude'],
+            'longitude' => $data['longitude'],
+            'country_id' => $data['country_id']
+        ]);
+
+        return [
+            'message' => 'Sucesso'
+        ];
+    }
 }
