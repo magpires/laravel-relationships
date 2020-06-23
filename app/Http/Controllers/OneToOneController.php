@@ -81,8 +81,8 @@ class OneToOneController extends Controller
             'country_id' => $data['country_id']
         ]);
 
-        return [
-            'message' => 'Sucesso'
-        ];
+        return response()->json(array(
+            'mensagem' => 'Cadastrado com sucesso'
+        ));
     }
 }

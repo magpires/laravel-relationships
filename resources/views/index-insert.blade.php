@@ -1,6 +1,5 @@
 <form method="POST" action="{{route('one-to-one-android-insert')}}">
-    <input type="hidden" name="_token" value="fPm8z6cDnDY1w6XaMp411qpHpjzQViU3azVsWYuR">
-    {{-- @csrf --}}
+    @csrf
 
     <label>Nome: </label>
     <input id="name" name="name">
